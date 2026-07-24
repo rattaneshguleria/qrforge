@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QRForge — Scan Anything Into Being</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◱</span>
+    <span class="brand-name">QRForge</span>
+  </div>
+  <nav class="topnav">
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="console">
+
+  <!-- LEFT: input console -->
+  <section class="panel input-panel">
+    <p class="eyebrow">01 · INPUT</p>
+    <h1>Turn anything<br>into a scan.</h1>
+    <p class="lede">Text, a link, a Wi-Fi password, a note to your future self — type it in and QRForge encodes it on the spot. Nothing leaves your browser until you hit generate.</p>
+
+    <form id="qr-form" class="qr-form">
+      <label for="qr-input">Data to encode</label>
+      <textarea id="qr-input" name="qr-input" rows="3" placeholder="https://your-link.com or any text..." maxlength="900" required></textarea>
+      <div class="field-meta">
+        <span id="char-count">0 / 900</span>
+      </div>
+
+      <div class="options-row">
+        <label for="qr-size">Resolution</label>
+        <select id="qr-size">
+          <option value="300">300 × 300</option>
+          <option value="500" selected>500 × 500</option>
+          <option value="800">800 × 800</option>
+        </select>
+      </div>
+
+      <button type="submit" class="generate-btn">
+        <span class="btn-label">Generate code</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </form>
+
+    <ul class="feature-list">
+      <li>Instant encoding via live API</li>
+      <li>Download as PNG in one click</li>
+      <li>No signup, no tracking, no server storage</li>
+    </ul>
+  </section>
+
+  <!-- RIGHT: scanner bed -->
+  <section class="panel scanner-panel">
+    <p class="eyebrow eyebrow-right">02 · OUTPUT</p>
+
+    <div class="scanner-bed" id="scanner-bed">
+      <div class="bed-corner tl"></div>
+      <div class="bed-corner tr"></div>
+      <div class="bed-corner bl"></div>
+      <div class="bed-corner br"></div>
+
+      <div class="bed-content">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-glyph">▦</div>
+          <p>Waiting for input</p>
+          <span>Your code will develop here</span>
+        </div>
+
+        <div class="qr-wrap" id="qr-wrap" hidden>
+          <img id="qr-image" alt="Generated QR code" />
+          <div class="laser" id="laser" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="bed-readout" id="bed-readout">STANDBY</div>
+    </div>
+
+    <div class="output-actions" id="output-actions" hidden>
+      <button id="download-btn" class="download-btn">Download PNG</button>
+      <button id="copy-btn" class="copy-btn">Copy data</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>Built with HTML, CSS &amp; vanilla JS · powered by a free QR encoding API</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
