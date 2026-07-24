@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — QRForge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-main {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+  .about-main h1 { font-family: var(--display-font); font-size: 2.2rem; margin-bottom: 8px; }
+  .about-main p { color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+  .about-main a { color: var(--scan-mint); }
+  .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+    margin: 24px 0 40px;
+  }
+  .stack-list li {
+    font-family: var(--mono-font);
+    font-size: 0.78rem;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  .back-link { font-family: var(--body-font); font-weight: 500; color: var(--scan-red); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◱</span>
+    <span class="brand-name">QRForge</span>
+  </div>
+  <nav class="topnav">
+    <a href="index.html">← Back to generator</a>
+  </nav>
+</header>
+
+<main class="about-main">
+  <p class="eyebrow">ABOUT</p>
+  <h1>A QR generator with nothing to hide.</h1>
+  <p>
+    QRForge turns any text or link into a scannable QR code, right in your browser.
+    There's no account, no server-side storage, and no tracking — your input is sent
+    directly to a QR encoding API and rendered back as an image you can download or share.
+  </p>
+  <p>
+    It was built as a small, focused project: pick one job, do it cleanly, and make the
+    interface itself feel like part of the experience — hence the scanner-bed layout and
+    the laser sweep every time a code is generated.
+  </p>
+
+  <ul class="stack-list">
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>Vanilla JavaScript</li>
+    <li>QR Server API</li>
+    <li>Google Fonts</li>
+  </ul>
+
+  <p>
+    Source available on
+    <a href="https://github.com/rattaneshguleria" target="_blank" rel="noopener">GitHub</a>.
+  </p>
+</main>
+
+<footer class="footer">
+  <span>Built with HTML, CSS &amp; vanilla JS · powered by a free QR encoding API</span>
+</footer>
+
+</body>
+</html>
